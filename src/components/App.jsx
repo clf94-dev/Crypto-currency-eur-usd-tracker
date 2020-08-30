@@ -97,7 +97,9 @@ function App() {
             </div>
             {filteredCoins.map(coin => {
                 return (<Coin
+               
                     key={coin.id}
+                    classes={currency ? 'coin-container orange': 'coin-container blue'}
                     name={coin.name}
                     image={coin.image}
                     symbol={coin.symbol}

@@ -3,6 +3,7 @@ import './styles/App.css'
 function Coin({
     image,
     name,
+    classes,
     symbol,
     price,
     maxPrice,
@@ -12,7 +13,7 @@ function Coin({
     marketcap
 }) {
     return (
-        <div className="coin-container">
+        <div className={classes} >
             <div className="coin-row">
                 <div className="coin">
                     <img src={image} alt="crypto"/>
@@ -25,7 +26,7 @@ function Coin({
                     </p>
                     <p className="coin-price-max">${maxPrice}</p>
                     <p className="coin-price-min">${minPrice}</p>
-                    <p className="coin-wolume">${volume.toLocaleString()}</p>
+                    <p className="coin-volume">${volume.toLocaleString()}</p>
                     {priceChange < 0
                         ? <p className='coin-percent red'>{priceChange.toFixed(2)}%</p>
                         : <p className='coin-percent green'>{priceChange.toFixed(2)}%</p>}
