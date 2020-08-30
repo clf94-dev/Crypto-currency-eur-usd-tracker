@@ -54,7 +54,7 @@ function App() {
                 setCoins(response.data);
                 console.log(response.data);
             })
-            .catch(error => alert(error));
+            .catch(error => console.log(error));
     }, [currencyUrl]);
 
     return (
@@ -72,6 +72,7 @@ function App() {
                     <Grid item className='options'>USD</Grid>
                     <Grid item>
                         <Switch
+      
                             classes={switchStyles}
                             checked={!currency}
                             onClick={handleClick}
@@ -86,6 +87,7 @@ function App() {
                     Search a crypto currency</h2>
                 <form >
                     <input
+                    style={{backgroundImage: currency?'linear-gradient(to right, #ee0979, #ff6a00)': 'linear-gradient(to right, #43cea2, #185a9d)' }}
                         type="text"
                         placeholder='Search'
                         className='coin-input'
